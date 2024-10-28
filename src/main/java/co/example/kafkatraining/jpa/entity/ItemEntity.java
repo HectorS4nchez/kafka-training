@@ -21,7 +21,11 @@ public class ItemEntity {
         }
     }
 
-    public void incrementQuantity(int quantity) {
+    public void incrementQuantity(int quantity) throws Exception {
         this.quantity += quantity;
+
+        if (this.quantity > 500){
+            throw new Exception("sufficient stock");
+        }
     }
 }
